@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shane Davis — Genre</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside id="sidebar" class="sidebar">
+    <div class="logo" id="logoToggleSmall" title="Toggle theme">SD</div>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a>
+
+      <div class="nav-link" style="font-weight:600;margin-top:10px;">Genres</div>
+
+<a href="#soul" class="nav-link">• New Release!</a>
+<a href="#live" class="nav-link">• Live</a>
+<a href="#rock" class="nav-link">• Rock</a>
+<a href="#indie" class="nav-link">• Indie</a>
+<a href="#reggae" class="nav-link">• Reggae</a>
+<a href="#jazz" class="nav-link">• Soul</a>
+<a href="#latin" class="nav-link">• Latin</a>
+<a href="#hiphop" class="nav-link">• Hip Hop</a>
+
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </aside>
+
+  <div class="main-content" id="mainContent">
+    <section id="home" class="section intro-section">
+      <div class="intro-card">
+       <h1 class="page-title">Genre</h1>
+        <p class="genre-sub">— select a genre on the left to explore recorded projects.</p>
+      </div>
+    </section>
+
+    <div id="genresContainer">
+     <section id="soul" class="section genre-section">
+  <h3 class="genre-title">New Release!</h3>
+  <div class="cards" data-genre="soul"></div>
+</section>
+
+<section id="live" class="section genre-section">
+  <h3 class="genre-title">Live</h3>
+  <div class="cards" data-genre="live"></div>
+</section>
+
+<section id="rock" class="section genre-section">
+  <h3 class="genre-title">Rock</h3>
+  <div class="cards" data-genre="rock"></div>
+</section>
+
+<section id="indie" class="section genre-section">
+  <h3 class="genre-title">Indie</h3>
+  <div class="cards" data-genre="indie"></div>
+</section>
+
+<section id="reggae" class="section genre-section">
+  <h3 class="genre-title">Reggae</h3>
+  <div class="cards" data-genre="reggae"></div>
+</section>
+
+<section id="jazz" class="section genre-section">
+  <h3 class="genre-title">Soul</h3>
+  <div class="cards" data-genre="jazz"></div>
+</section>
+
+<section id="latin" class="section genre-section">
+  <h3 class="genre-title">Latin</h3>
+  <div class="cards" data-genre="latin"></div>
+</section>
+
+<section id="hiphop" class="section genre-section">
+  <h3 class="genre-title">Hip Hop</h3>
+  <div class="cards" data-genre="hiphop"></div>
+</section>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-contact">
+          <div><strong>Shane Davis</strong></div>
+          <div id="footerPhone">(805)448-4478</div>
+          <div id="footerEmail">Shane_Davis00@gmail.com</div>
+        </div>
+        <div class="footer-copyright">© <span id="year"></span> Shane Davis</div>
+      </div>
+    </footer>
+  </div>
+
+  <button id="backToTop" class="back-to-top" title="Back to top">↑</button>
+
+  <!-- lightbox (used by gallery only but harmless here) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+    <button class="lightbox-prev" id="lightboxPrev">◀</button>
+    <button class="lightbox-next" id="lightboxNext">▶</button>
+  </div>
+
+  <script src="songs.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

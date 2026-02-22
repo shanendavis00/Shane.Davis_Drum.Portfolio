@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shane Davis — Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside id="sidebar" class="sidebar">
+    <div class="logo" id="logoToggleSmall2" title="Toggle theme">SD</div>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="genre.html" class="nav-link">Genre</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <section class="section gallery-section">
+      <h2 class="page-title">Gallery</h2>
+      <p class="page-sub">Photos & videos from gigs, sessions, and gear.</p>
+<!-- Spinning cylinder ring (visual-only) -->
+<div class="ring" id="ring" aria-hidden="true">
+  <div class="ring-track" id="ringTrack"></div>
+</div>
+      <div id="galleryGrid" class="masonry-grid"></div>
+    </section>
+
+    <section class="section video-section">
+  <h3 class="genre-title">Video clips coming soon!!</h3>
+  
+</section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-contact">
+          <div><strong>Shane Davis</strong></div>
+          <div id="footerPhoneG">(805)448-4478</div>
+          <div id="footerEmailG">Shane_Davis00@gmail.com</div>
+        </div>
+        <div class="footer-copyright">© <span id="year2"></span> Shane Davis</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+    <button class="lightbox-prev" id="lightboxPrev">◀</button>
+    <button class="lightbox-next" id="lightboxNext">▶</button>
+  </div>
+
+  <script src="gallery.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
