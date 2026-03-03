@@ -73,7 +73,8 @@ const galleryVideos = [
     if (!count) return;
 
     // Use the real rendered panel width (matches your CSS exactly)
-    const panelW = panels[0].getBoundingClientRect().width;
+    // Use an untransformed width (mobile fix)
+const panelW = panels[0].offsetWidth || parseFloat(getComputedStyle(panels[0]).width);
 
     // Cylinder radius so panels meet edge-to-edge
     let radius = (panelW / 2) / Math.tan(Math.PI / count);
@@ -93,5 +94,14 @@ const galleryVideos = [
   }
 
   layout();
-  window.addEventListener('resize', layout, { passive: true });
+  window.addEventListener('resize', () => requestAnimationFrame(layout), { passive: true });
+window.addEventListener('orientationchange', () => setTimeout(layout, 50), { passive: true });
+
+// Mobile browsers change viewport size when you scroll (URL bar show/hide)
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', () => requestAnimationFrame(layout), { passive: true });
+}
+
+// After images load, widths are stable
+window.addEventListener('load', () => setTimeout(layout, 0), { passive: true });
 })();
