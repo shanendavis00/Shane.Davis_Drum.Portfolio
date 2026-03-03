@@ -599,3 +599,67 @@ body.light .photo-frame img{
 .menu-toggle{
   display: none;
 }
+/* =========================
+   PHONE PORTRAIT TOP NAV
+   (keeps laptop unchanged)
+   ========================= */
+@media (max-width: 600px){
+
+  /* Turn sidebar into a top bar */
+  .sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 10px;
+    padding: 10px 12px;
+    z-index: 100;
+  }
+
+  /* Hide hamburger if it exists */
+  .menu-toggle{ display: none !important; }
+
+  /* Make nav links go left→right next to logo */
+  .sidebar .nav{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    /* If screen is too narrow, allow sideways scroll */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+
+    /* prevent the nav from forcing wrapping */
+    flex: 1;
+  }
+
+  /* Make the links look like little buttons */
+  .sidebar .nav-link{
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    flex: 0 0 auto;
+  }
+
+  /* Content should not be pushed right on phone */
+  .main-content{
+    margin-left: 0;
+    padding-top: 12px;
+  }
+
+  /* Reduce big desktop padding on phone */
+  .section{
+    padding: 20px 16px;
+  }
+}
