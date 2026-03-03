@@ -76,19 +76,21 @@ const galleryVideos = [
     // Use an untransformed width (mobile fix)
 const panelW = panels[0].offsetWidth || parseFloat(getComputedStyle(panels[0]).width);
 
-    // Cylinder radius so panels meet edge-to-edge
-    let radius = (panelW / 2) / Math.tan(Math.PI / count);
+// Base cylinder radius
+let radius = (panelW / 2) / Math.tan(Math.PI / count);
 
-    // Add a little breathing room so they never intersect
-    radius *= 1.142;
+// Detect mobile
+const isMobile = window.matchMedia('(max-width: 600px)').matches;
 
-    // Place each panel evenly around the cylinder
-    panels.forEach((p, i) => {
-      const angle = (360 / count) * i;
-      p.style.transform =
-        `translate(-50%, -50%) rotateY(${angle}deg) translateZ(${radius}px)`;
-    });
+// Desktop keeps breathing room, mobile tightens slightly
+radius *= isMobile ? 1.02 : 1.142;
 
+// Place each panel evenly around the cylinder
+panels.forEach((p, i) => {
+  const angle = (360 / count) * i;
+  p.style.transform =
+    `translate(-50%, -50%) rotateY(${angle}deg) translateZ(${radius}px)`;
+});
     // Speed: tweak this number (smaller = faster)
     track.style.setProperty('--spin', '45s');
   }
