@@ -39,7 +39,7 @@ body.landing{background:linear-gradient(180deg,#0f1723,#071126); color:#fff; dis
   display: inline-block;
   position: relative;
 }
-
+.photo-frame img { width: min(88vw, 420px); }
 .photo-frame img {
   width: 420px;
   height: auto;
@@ -662,4 +662,95 @@ body.light .photo-frame img{
   .section{
     padding: 20px 16px;
   }
+}
+/* =========================
+   MOBILE FIXES ONLY
+   Laptop/Desktop stays EXACTLY the same
+   ========================= */
+
+/* landing pages (index/cover) mobile nav: hidden by default */
+.top-nav{ display:none; }
+
+@media (max-width: 600px){
+  /* Turn the left sidebar into a simple top nav bar on phone */
+  .sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    z-index: 100;
+  }
+
+  .sidebar .nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .sidebar .nav-link{
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    flex: 0 0 auto;
+  }
+
+  /* Content should not be pushed right on phone */
+  .main-content{
+    margin-left: 0;
+    padding-top: 12px;
+  }
+
+  /* Reduce big desktop padding on phone */
+  .section{ padding: 20px 16px; }
+
+  /* Home photo: prevent side-to-side cutoff */
+  .photo-frame img{
+    width: min(88vw, 420px);
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Gallery ring: on small screens it can overlap; hide it on phone.
+     (Your masonry grid + lightbox still works.) */
+  .ring{ display:none; }
+
+  /* LANDING PAGE TOP NAV (next to SD logo) */
+  .top-left-fixed{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .top-nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    white-space:nowrap;
+  }
+
+  .top-nav a{
+    display:inline-flex;
+    align-items:center;
+    padding:8px 10px;
+    border-radius:10px;
+  }
+
+  /* Genre page: keep the nav simple on phone */
+  .nav .nav-section-label,
+  .nav .sub-link{ display:none !important; }
 }
