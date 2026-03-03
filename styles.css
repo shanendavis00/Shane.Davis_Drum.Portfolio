@@ -776,4 +776,19 @@ body.light .photo-frame img{
   /* Genre page: keep the nav simple on phone */
   .nav .nav-section-label,
   .nav .sub-link{ display:none !important; }
+}/* FORCE RING TO SHOW ON MOBILE (debug + fix) */
+@media (max-width: 600px){
+  .ring{
+    display: block !important;
+    height: clamp(180px, 50vw, 280px) !important;
+    overflow: visible !important;
+
+    /* if the mask is the culprit on your phone, disable it on mobile */
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+
+    outline: 3px solid lime;            /* TEMP: proves it's on the page */
+    background: rgba(0,255,0,0.06);     /* TEMP */
+  }
+  .ring-panel{ outline: 2px solid red; } /* TEMP */
 }
