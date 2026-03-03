@@ -725,7 +725,30 @@ body.light .photo-frame img{
 
   /* Gallery ring: on small screens it can overlap; hide it on phone.
      (Your masonry grid + lightbox still works.) */
-  .ring{ display:none; }
+ /* Mobile ring tuning (keeps carousel, prevents weird overlap) */
+.ring{
+  display: block;
+  max-width: 100%;
+  height: clamp(170px, 46vw, 260px);
+  perspective: 1100px;
+  margin: 14px auto 28px;
+}
+
+/* Make panels slightly narrower on phone so they don't collide */
+.ring-panel{
+  width: 44%;
+  height: 68%;
+}
+
+/* Use a slightly shallower camera on phone */
+.ring-track{
+  animation: ringSpinMobile var(--spin, 45s) linear infinite;
+}
+
+@keyframes ringSpinMobile{
+  from { transform: translateZ(-140px) rotateY(0deg); }
+  to   { transform: translateZ(-140px) rotateY(-360deg); }
+}
 
   /* LANDING PAGE TOP NAV (next to SD logo) */
   .top-left-fixed{
