@@ -236,3 +236,30 @@
   syncContact();
 
 })();
+  // PHONE HAMBURGER NAV (only affects phone due to CSS)
+  const sidebar = document.querySelector('.sidebar');
+  const menuBtn = document.querySelector('.menu-toggle');
+
+  if (sidebar && menuBtn) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = sidebar.classList.toggle('nav-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // close when tapping a link
+    sidebar.querySelectorAll('.nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        sidebar.classList.remove('nav-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // close when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target)) {
+        sidebar.classList.remove('nav-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }

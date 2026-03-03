@@ -528,3 +528,74 @@ body.light .photo-frame img{
   /* final fade into background */
   0 0 0 60px rgba(247,243,233,0.00);
 }
+/* =========================
+   PHONE NAV (hamburger)
+   Keeps laptop exactly the same
+   ========================= */
+@media (max-width: 600px) {
+
+  /* Turn sidebar into top bar */
+  .sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    z-index: 100;
+  }
+
+  /* show hamburger only on phone */
+  .menu-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    font-size: 22px;
+    background: rgba(255,255,255,0.06);
+    color: inherit;
+  }
+
+  /* Hide the nav by default on phone */
+  .sidebar .nav{
+    display: none;
+    width: 100%;
+  }
+
+  /* When open, show nav as a dropdown panel */
+  .sidebar.nav-open{
+    flex-wrap: wrap;
+  }
+
+  .sidebar.nav-open .nav{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 10px;
+  }
+
+  .sidebar.nav-open .nav-link{
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  /* Ensure content doesn't get left margin on phone */
+  .main-content{
+    margin-left: 0;
+    padding-top: 12px;
+  }
+}
+
+/* Hide hamburger on anything bigger than phone */
+.menu-toggle{
+  display: none;
+}
